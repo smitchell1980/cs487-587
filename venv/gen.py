@@ -22,7 +22,7 @@ def str4Select(index):
         }
     return switcher.get(index%4)
 
-with open('test.csv', mode='w' newline='') as employee_file:
+with open('test.csv', mode='w', newline='') as employee_file:
     tupleCount = 1000000
     employee_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     numList = random.sample(range(0,tupleCount),tupleCount)
@@ -44,4 +44,7 @@ with open('test.csv', mode='w' newline='') as employee_file:
         #line += '","' +str(twenty)+'","'+str(onePercent)+'","'+str(tenPercent)+'","'+str(twentyPercent)
         #line += '","'+str(fiftyPercent)+'","'+str(unique3)+'","'+str(evenOnePercent)+'","'+str(oddOnePercent)+'"'
         #print(line)
+        stringu1 = convert(unique1)
+        stringu2 = convert(unique2)
+        string4 = str4Select(i)
         employee_writer.writerow([unique1, unique2, two, four, ten, twenty, onePercent, tenPercent, twentyPercent, fiftyPercent, unique3, evenOnePercent, oddOnePercent, stringu1, stringu2, string4])
